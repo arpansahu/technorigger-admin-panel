@@ -1,0 +1,13 @@
+{% autoescape off %}
+
+Hi {{ user.get_username }},
+
+
+To initiate the account activation process for your account on {{ domain }},
+click the link below:
+
+{{ protocol }}://{{ domain }}{% url 'account_activate' uidb64=uid token=token %}
+If clicking the link above doesn't work, please copy and paste the URL in a new browser
+window instead.
+
+{% endautoescape %}
