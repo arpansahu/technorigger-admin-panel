@@ -20,5 +20,5 @@ dump.rdb
 .env.live
 venv
 *firebase.json
-#**/migrations/*
+**/migrations/*
 .env.prod.proxy-companion
