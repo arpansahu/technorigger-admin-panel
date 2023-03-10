@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    env_file: ./.env
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn --bind 0.0.0.0:8015 JobPortal.wsgi"
+    image: job_portal_admin_panel
+    container_name: job_portal_admin_panel
+    volumes:
+      - .:/job_portal_admin_panel
+    ports:
+      - "8015:8015"
